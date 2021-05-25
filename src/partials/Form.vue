@@ -57,10 +57,10 @@ export default {
         postItem() {
             let uri
 
-            if (this.$route.params.id) {
-                uri = 'http://localhost:4000/items/update/' + this.$route.params.id
+            if (this.$route.params.id) { // is existing item
+                uri = process.env.VUE_APP_URL + '/items/update/' + this.$route.params.id
             } else {
-                uri = 'http://localhost:4000/items/add'
+                uri = process.env.VUE_APP_URL + '/items/add'
             }
 
             this.axios.post(uri, this.item).then(() =>

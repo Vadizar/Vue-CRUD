@@ -23,7 +23,7 @@ export default {
     methods: {
         getItem() {
             if (this.$route.params.id) {
-                const uri = 'http://localhost:4000/items/edit/' + this.$route.params.id
+                const uri = process.env.VUE_APP_URL + '/items/edit/' + this.$route.params.id
                 this.axios.get(uri).then(response =>
                     this.item = response.data
                 )

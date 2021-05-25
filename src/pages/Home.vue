@@ -72,13 +72,13 @@ export default {
 
     methods: {
         fetchItems() {
-            const uri = 'http://localhost:4000/items'
+            const uri = process.env.VUE_APP_URL + '/items'
             this.axios.get(uri).then(response =>
                 this.items = response.data.reverse()
             )
         },
         deleteItem(id) {
-            const uri = 'http://localhost:4000/items/delete/' + id
+            const uri = process.env.VUE_APP_URL + '/items/delete/' + id
             this.axios.get(uri).then(() =>
                 this.items = this.items.filter(item => item._id !== id)
             )
