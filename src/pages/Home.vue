@@ -5,7 +5,7 @@
 
             <button
                 class="btn btn-primary ms-3"
-                @click="exportToJSON('Users', 'json')"
+                @click="exportToJSON(items, 'Users', 'json')"
             >
                 Export
             </button>
@@ -83,8 +83,7 @@ export default {
                 this.items = this.items.filter(item => item._id !== id)
             )
         },
-        exportToJSON(fileName, exportType) {
-            const data = this.items
+        exportToJSON(data, fileName, exportType) {
             exportFromJSON({
                 data,
                 fileName,
