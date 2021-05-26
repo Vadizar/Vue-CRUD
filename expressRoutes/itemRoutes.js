@@ -10,7 +10,7 @@ itemRoutes.route('/add').post((req, res) => {
   item.save().then(item => {
       res.status(200).json({'item': 'Item added successfully'})
     }).catch(err => {
-      res.status(400).send("unable to save to database")
+      res.status(400).send('Unable to update the database')
     })
 })
 
@@ -46,7 +46,7 @@ itemRoutes.route('/update/:id').post((req, res) => {
       item.save().then(item => {
         res.json('Update complete')
       }).catch(err => {
-        res.status(400).send("unable to update the database")
+        res.status(400).send('Unable to update the database')
       })
     }
   })
